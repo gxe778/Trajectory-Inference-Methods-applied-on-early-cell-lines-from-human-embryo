@@ -33,7 +33,7 @@ v<-log2(counts+1)
 # create a SingleCellExperiment object sce
 sce <- SingleCellExperiment(assay = list(counts = counts, logcounts=v))
 
-
-data(v) # synthetic gene expression data bundled
+#Ouija
+data(v) 
 oui <- ouija(v)
 pseudotimes <- map_pseudotime(v)
