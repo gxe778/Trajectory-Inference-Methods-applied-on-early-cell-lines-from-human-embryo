@@ -34,6 +34,5 @@ v<-log2(counts+1)
 sce <- SingleCellExperiment(assay = list(counts = counts, logcounts=v))
 
 #Ouija
-data(v) 
 oui <- ouija(v)
 pseudotimes <- map_pseudotime(v)
