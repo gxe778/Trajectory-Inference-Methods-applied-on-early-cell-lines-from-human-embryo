@@ -50,9 +50,11 @@ aggdata <- aggdata[,-1]
 
 #kmeans
 
-HSMMkmeans <- exprkmeans(aggdata)
+HSMMkmeans <- kmeans(aggdata, centers=7)
 
-HSMMkmeansorder <- TSCANorder(HSMMkmeans)
+
+
+HSMMkmeansorder <- TSCANorder(HSMMkmeansorder)
 
 #waterfall example
 HSMMwaterfallorder <- pseudotimeprog.foo(aggdata,color="black") 
