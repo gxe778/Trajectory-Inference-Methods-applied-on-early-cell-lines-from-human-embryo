@@ -41,7 +41,7 @@ cds <- new_cell_data_set(v)
 cds <- preprocess_cds(cds, num_dim = 100)
 
 #Reduce via UMAP
-cds <- reduce_dimensio(cds)
+cds <- reduce_dimension(cds)
 
 cds <- cluster_cells(cds)
 
