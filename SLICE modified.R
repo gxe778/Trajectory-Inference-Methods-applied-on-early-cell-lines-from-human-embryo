@@ -43,8 +43,13 @@ v<-log2(counts+1)
 
 sce <- SingleCellExperiment(assay = list(counts = counts, logcounts=v))
 
-#slice functions
-#make directory SLICE
+
+#download SLICE from following if needed (e.g. hs_km data)
+
+#https://research.cchmc.org/pbge/slice.html
+
+
+#make directory SLICE: load functions
 
 source("slice.R")
 
