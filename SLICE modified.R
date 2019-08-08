@@ -1,18 +1,3 @@
-###############################################################################
-##
-## Demonstration script
-##
-## SLICE Analysis of HEE data
-##
-## SLICE version: SLICE a12242016
-##
-## Author: Minzhe Guo (minzhe.guo@cchmc.org)
-## Date: Dec. 24, 2016
-##
-###############################################################################
-
-
-
 
 #Load Data
 TI_Data_Yan_et_al <- read_excel("TI Data Yan et al.xlsx")
@@ -44,14 +29,18 @@ v<-log2(counts+1)
 sce <- SingleCellExperiment(assay = list(counts = counts, logcounts=v))
 
 
-#download SLICE from following if needed (e.g. hs_km data)
+#download SLICE from following:
+
 
 #https://research.cchmc.org/pbge/slice.html
 
 
-#make directory SLICE: load functions
+#make directory SLICE: download SLICE package (above) and source "slice.R" (in package folder or user defined folder that has "slice.R") load functions:
+
+
 
 source("slice.R")
+
 
 
 
