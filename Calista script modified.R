@@ -33,6 +33,8 @@ counts<-as.matrix(TID)
 
 v<-log2(counts+1)
 
+save(v, file="v.xlsx")
+
 sce <- SingleCellExperiment(assay = list(counts = counts, logcounts=v))
 
 
