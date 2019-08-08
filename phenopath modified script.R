@@ -41,9 +41,7 @@ x <- 2 * (v== "v") - 1
 
 scale_vec <- function(x) (x - mean(x)) / sd(x)
 pc1 <- prcomp(t(x))
-pc1 <- scale_vec(pc1)
-time_numeric <- as.numeric(gsub("h", "", sce$time))
-pc1 <- pc1 * sign(cor(pc1, time_numeric))
+
 
 #Phenopath
 fit <- phenopath(v, x)
