@@ -51,31 +51,20 @@ TID<-TID[,-c(1:2)]
 
 
 #save data in excel and R
-
-save(TID, file="TID.xlsx")
-
-
-
 save(TID,file="TID.Rda")
 
-
-
-
-
-#Create SingleCell Object
-
-counts<-as.matrix(TID)
-
-
-
-v<-log2(counts+1)
-
-
+write.xlsx2(TID, file="TID.xlsx")
 
 
 # create a SingleCellExperiment object sce
 
+counts<-as.matrix(TID)
+
+v<-log2(counts+1)
+
+
 sce <- SingleCellExperiment(assay = list(counts = counts, logcounts=v))
+
 
 
 
