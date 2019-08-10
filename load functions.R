@@ -7,6 +7,8 @@ library(dplyr)
 
 library(readxl)
 
+options(java.parameters = "-Xmx8000m")
+
 library(rJava)
 
 library(xlsx)
