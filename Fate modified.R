@@ -27,18 +27,14 @@ save(TID,file="TID.Rda")
 write.xlsx2(TID, file="TID.xlsx")
 
 
+# create a SingleCellExperiment object sce
 
 counts<-as.matrix(TID)
 
 v<-log2(counts+1)
 
 
-save(v, file="v.Rda")
 
-write.xlsx2(v, file="v.xlsx")
-
-
-# create a SingleCellExperiment object sce
 sce <- SingleCellExperiment(assay = list(counts = counts, logcounts=v))
 
 
