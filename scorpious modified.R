@@ -1,4 +1,4 @@
-#sCORPIOUS sCRIPT
+#SCORPIOUS script
 
 #https://github.com/rcannood/SCORPIUS
 
