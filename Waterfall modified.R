@@ -48,7 +48,6 @@ plot(hr, hang = 0.1,labels=cutree(hr,k=7))
 
 pca18 <- prcomp(as.data.frame(t(all)), cor=T)
 
-# Following the analysis scheme from Treutlein et al., where they selected 36 highest contributing genes from PC1 to PC4 (Please check the supplementary file at Treutlein et al.)
 gene_list <-unique(c(head(names(sort(pca18$rotation[,1])),18),tail(names(sort(pca18$rotation[,1])),18),head(names(sort(pca18$rotation[,2])),18),tail(names(sort(pca18$rotation[,2])),18),head(names(sort(pca18$rotation[,3])),18),tail(names(sort(pca18$rotation[,3])),18),head(names(sort(pca18$rotation[,4])),18),tail(names(sort(pca18$rotation[,4])),18)))
 
 all <-t(scale(t(all[match(gene_list,rownames(all)),])))
@@ -78,6 +77,8 @@ gene_name=as.matrix(all)
 plot(pca18$x[,1:2])
 
 ###Voronoi plot ###
+all <-v
+
 c <- cor(as.matrix(all), method="pearson")
 d <- dist(c)
 hr <- hclust(d, method = "ward", members=NULL)
