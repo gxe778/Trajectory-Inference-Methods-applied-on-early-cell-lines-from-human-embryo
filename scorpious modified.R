@@ -46,7 +46,6 @@ draw_trajectory_plot(space,contour = TRUE)
 
 #Inference
 traj <- infer_trajectory(space)
-draw_trajectory_plot(space)
 
 draw_trajectory_plot(traj$path, contour = TRUE)
 
