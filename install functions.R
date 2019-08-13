@@ -25,6 +25,18 @@ library(foreign)
 install.packages("ggplot2")
 library(ggplot2)
 
+install.packages(“rJava”)
+library(rJava)
+
+install.packages(“xlxs”)
+library(xlxs)
+
+install.packages(“utils”)
+library(utils)
+
+install.packages(“psych”)
+library(psych)
+
 install.packages("MASS")
 library(MASS)
 
@@ -263,6 +275,7 @@ library(CellBench)
 
 BiocManager::install("bayNorm")
 library(bayNorm)
+
 
 BiocManager::install("scFeatureFilter")
 library(scFeatureFilter)
