@@ -11,5 +11,5 @@ Single-cell RNA-Seq profiling of human preimplantation embryos and embryonic ste
 https://www.nature.com/articles/nsmb.2660
 
 #Project is continously undergoing edits and construction, and therefore algorithm scripts may not reflect ideal or final form.
-Data has been modified into an excel file of Rpkm counts of individual cells. Original publication and table (Supp. File #1) is found below:
+Data has been modified into an excel file of Rpkm counts of individual cells. Original publication and table (Supp. File #1) is found above.
 
