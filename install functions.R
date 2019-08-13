@@ -280,11 +280,8 @@ library(bayNorm)
 BiocManager::install("scFeatureFilter")
 library(scFeatureFilter)
 
-BiocManager::install("HCABrowser")
+BiocManager::install("HCABrowser”)
 library(HCABrowser)
-
-BiocManager::install("scRecover")
-library(scRecover)
 
 BiocManager::install("scAlign")
 library(scAlign)
