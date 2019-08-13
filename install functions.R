@@ -4,6 +4,9 @@
 install.packages("reticulate")
 library(reticulate)
 
+install.packages(“readxl”)
+library(readxl)
+
 install.packages("dplyr")
 library(dplyr)
 
