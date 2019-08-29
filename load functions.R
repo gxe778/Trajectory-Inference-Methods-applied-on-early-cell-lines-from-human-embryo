@@ -79,6 +79,7 @@ library(Seurat)
 
 
 
+library(BioNet)
 
 library(graph)
 
@@ -91,7 +92,6 @@ library(annotation)
 library(sequencing)
 
 library(arrays)
-
 
 library(ExpressionNormalizationWorkflow)
 
@@ -133,18 +133,13 @@ library(clusterExperiment)
 
 library(genomation)
 
-
 library(GenVisR)
-
-library(BioNet)
-
 
 library(SeqGSEA)
 
 library(KEGGprofile)
 
 library(scmap)
-
 
 library(PharmacoGx)
 
@@ -156,9 +151,7 @@ library(GOSim)
 
 library(AnnotationHubData)
 
-
 library(BiocWorkflowTools)
-
 
 library(ClusterSignificance)
 
@@ -195,8 +188,6 @@ library(scAlign)
 library(bigPint)
 
 library(splatter)
-
-library(BioNet)
 
 library(sincell)
 
