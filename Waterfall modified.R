@@ -119,7 +119,7 @@ c <- cor(all, method="pearson")
 d <- dist(c)
 hr <- hclust(d, method = "ward", members=NULL)
 plot(hr, hang = 0.1); 
-plot(hr,labels=colnames(all)) #;plot(hr,labels=cutree(hr,h=1))
+plot(hr,labels=colnames(all)) 
 d <-dist(t(all))
 plot(hr,labels=cutree(hr,h=5))
 cutree(hr,h=10)
