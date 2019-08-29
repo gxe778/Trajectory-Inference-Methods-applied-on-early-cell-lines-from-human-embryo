@@ -110,13 +110,13 @@ install.packages("Seurat")
 library(Seurat)
 
 
+
 #Bioconductor
 
 if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 
 BiocManager::install()
-
 
 
 BiocManager::install("graph")
@@ -276,7 +276,6 @@ library(CellBench)
 BiocManager::install("bayNorm")
 library(bayNorm)
 
-
 BiocManager::install("scFeatureFilter")
 library(scFeatureFilter)
 
@@ -291,9 +290,6 @@ library(bigPint)
 
 BiocManager::install("splatter")
 library(splatter)
-
-BiocManager::install("BioNet")
-library(BioNet)
 
 BiocManager::install("sincell")
 library(sincell)
