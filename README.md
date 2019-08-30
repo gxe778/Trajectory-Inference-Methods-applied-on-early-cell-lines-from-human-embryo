@@ -13,3 +13,4 @@ https://www.nature.com/articles/nsmb.2660
 #Project is continously undergoing edits and construction, and therefore algorithm scripts may not reflect ideal or final form.
 Data has been modified into an excel file of Rpkm counts of individual cells. Original publication and table (Supp. File #1) is found above.
 
+#NOTE: Data in this repository("TI Data Yan et al.xlsx" and "v.xlsx") must be saved in the exact file folder path that Rstudio is using when running any of the methods for importation. For example, if "TI Data Yan et al.xlsx" is downloaded and saved into a user folder called  "Downloads", the path running in Rstudio must be the "Downloads" file folder path. Additionally, for this reason, method scripts (and associated packages) downloaded are recommended to also share the same file folder path that data is stored in. 
