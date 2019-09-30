@@ -3,6 +3,8 @@
 
 library(reticulate)
 
+library(Rcpp)
+
 library(dplyr)
 
 library(readxl)
@@ -14,6 +16,8 @@ library(rJava)
 library(xlsx)
 
 library(utils)
+
+library(keras)
 
 library(dplyr)
 
@@ -30,6 +34,8 @@ library(foreign)
 library(ggplot2)
 
 library(MASS)
+
+library(keras)
 
 library(boot)
 
@@ -74,10 +80,6 @@ library(plyr)
 library(graph)
 
 library(Seurat)
-
-
-
-
 
 library(BioNet)
 
@@ -181,6 +183,8 @@ library(bayNorm)
 
 library(scFeatureFilter)
 
+library(scRecover)
+
 library(HCABrowser)
 
 library(scAlign)
@@ -192,3 +196,4 @@ library(splatter)
 library(sincell)
 
 library(scone)
+
