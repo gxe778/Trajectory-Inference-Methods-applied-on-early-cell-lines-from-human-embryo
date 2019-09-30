@@ -1,11 +1,11 @@
-#install functions 
+#Install functions 
 
+
+install.packages("Rcpp")
+library(Rcpp)
 
 install.packages("reticulate")
 library(reticulate)
-
-install.packages(“readxl”)
-library(readxl)
 
 install.packages("dplyr")
 library(dplyr)
@@ -22,20 +22,11 @@ library(SINCERA)
 install.packages("foreign")
 library(foreign)
 
+install.packages("keras")
+library(keras)
+
 install.packages("ggplot2")
 library(ggplot2)
-
-install.packages(“rJava”)
-library(rJava)
-
-install.packages(“xlxs”)
-library(xlxs)
-
-install.packages(“utils”)
-library(utils)
-
-install.packages(“psych”)
-library(psych)
 
 install.packages("MASS")
 library(MASS)
@@ -51,9 +42,6 @@ library(rgl)
 
 install.packages("VGAM")
 library(VGAM)
-
-install.packages("plotCluster")
-library(plotCluster)
 
 install.packages("DDRTree")
 library(DDRTree)
@@ -110,13 +98,13 @@ install.packages("Seurat")
 library(Seurat)
 
 
-
 #Bioconductor
 
 if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 
 BiocManager::install()
+
 
 
 BiocManager::install("graph")
@@ -143,9 +131,6 @@ library(ExpressionNormalizationWorkflow)
 BiocManager::install("simpleSingleCell")
 library(simpleSingleCell)
 
-BiocManager::install("cytofWorkflow")
-library(cytoworkflow)
-
 BiocManager::install("SingleCellExperiment")
 library(SingleCellExperiment)
 
@@ -164,8 +149,8 @@ library(Rgraphviz)
 BiocManager::install("ensembldb")
 library(ensembldb)
 
-BiocManager::install("Geoquery")
-library(Geoquery)
+BiocManager::install("GEOquery")
+library(GEOquery)
 
 BiocManager::install("pcaMethods")
 library(pcaMethods)
@@ -191,8 +176,8 @@ library(zinbwave)
 BiocManager::install("arrayQualityMetrics")
 library(arrayQualityMetrics)
 
-BiocManager::install("flowclust")
-library(flowclust)
+BiocManager::install("flowClust")
+library(flowClust)
 
 BiocManager::install("clusterExperiment")
 library(clusterExperiment)
@@ -216,7 +201,6 @@ library(KEGGprofile)
 BiocManager::install("scmap")
 library(scmap)
 
-
 BiocManager::install("PharmacoGx")
 library(PharmacoGx)
 
@@ -232,10 +216,8 @@ library(GOSim)
 BiocManager::install("AnnotationHubData")
 library(AnnotationHubData)
 
-
 BiocManager::install("BiocWorkflowTools")
 library(BiocWorkflowTools)
-
 
 BiocManager::install("ClusterSignificance")
 library(ClusterSignificance)
@@ -279,8 +261,11 @@ library(bayNorm)
 BiocManager::install("scFeatureFilter")
 library(scFeatureFilter)
 
-BiocManager::install("HCABrowser”)
+BiocManager::install("HCABrowser")
 library(HCABrowser)
+
+BiocManager::install("scRecover")
+library(scRecover)
 
 BiocManager::install("scAlign")
 library(scAlign)
