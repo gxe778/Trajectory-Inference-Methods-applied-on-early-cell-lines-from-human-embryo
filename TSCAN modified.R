@@ -1,7 +1,7 @@
                                                   #TSCAN 
 
 
-#devtools::install_github("TSCAN")
+devtools::install_github("TSCAN")
 
 library(TSCAN)
 
