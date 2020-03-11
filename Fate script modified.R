@@ -1,6 +1,6 @@
 
 
-                                            #FATE ID SCRIPT
+                                            #FATEID 
 
                                             #https://github.com/dgrun/FateID
 
@@ -76,7 +76,7 @@ sce <- SingleCellExperiment(assay = list(counts = counts, logcounts=v))
 
 
 
-#FATE 
+#FATEID
 
 tar<-c(v[, c(10,30,50)])
 
