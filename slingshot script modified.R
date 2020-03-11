@@ -1,20 +1,15 @@
-#Slingshot script
-
-
-
-#https://github.com/kstreet13/slingshot
+                                        #Slingshot 
 
 
 
 BiocManager::install("kstreet13/slingshot")
 
 
-
 library(slingshot)
 
 
 
-#Load Data
+#load data
 
 TI_Data_Yan_et_al <- read_excel("TI_Yan.xlsx")
 
@@ -44,14 +39,14 @@ TID<-TID[,-c(1:2)]
 
 
 
-# save data in excel and R:
+#save data in excel and R:
 
 
-# save(TID,file="TID.Rda")
+    save(TID,file="TID.Rda")
 
 
 
-# write.xlsx2(TID, file="TID.xlsx")
+    write.xlsx2(TID, file="TID.xlsx")
 
 
 
@@ -63,13 +58,13 @@ counts<-as.matrix(TID)
 v<-log2(counts+1)
 
 
-# save: excel and R:
+#save: excel and R:
 
 
-# save(v,file="v.Rda")
+     save(v,file="v.Rda")
 
 
-# write.xlsx2(v, file="v.xlsx")
+     write.xlsx2(v, file="v.xlsx")
 
 
 
@@ -84,7 +79,7 @@ sce <- SingleCellExperiment(assay = list(counts = counts, logcounts=v))
 
 
 
-#Dimension Reduction
+#dimension reduction
 
 
 
