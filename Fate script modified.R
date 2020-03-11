@@ -6,7 +6,7 @@
 
 
 
-#install_github("dgrun/FateID")
+install_github("dgrun/FateID")
 
 library(FateID)
 
@@ -43,11 +43,11 @@ TID<-TID[,-c(1:2)]
 #save data in excel and R:
 
 
-                                      #save(TID,file="TID.Rda")
+                                      save(TID,file="TID.Rda")
 
 
 
-                                      #write.xlsx2(TID, file="TID.xlsx")
+                                      write.xlsx2(TID, file="TID.xlsx")
 
 
 
@@ -62,10 +62,10 @@ v<-log2(counts+1)
 #save: excel and R:
 
 
-                #save(v,file="v.Rda")
+                save(v,file="v.Rda")
 
 
-                #write.xlsx2(v, file="v.xlsx")
+                write.xlsx2(v, file="v.xlsx")
 
 
 
