@@ -1,10 +1,8 @@
-
-
-#Waterfall Script
+                                                  #Waterfall 
 
 
 
-#Load Data
+#load data
 
 TI_Data_Yan_et_al <- read_excel("TI_Yan.xlsx")
 
@@ -34,14 +32,14 @@ TID<-TID[,-c(1:2)]
 
 
 
-# save data in excel and R:
+#save data in excel and R:
 
 
-# save(TID,file="TID.Rda")
+          save(TID,file="TID.Rda")
 
 
 
-# write.xlsx2(TID, file="TID.xlsx")
+          write.xlsx2(TID, file="TID.xlsx")
 
 
 
@@ -53,40 +51,26 @@ counts<-as.matrix(TID)
 v<-log2(counts+1)
 
 
-# save: excel and R:
+#save: excel and R:
 
 
-# save(v,file="v.Rda")
+           save(v,file="v.Rda")
 
 
-# write.xlsx2(v, file="v.xlsx")
+           write.xlsx2(v, file="v.xlsx")
 
 
 
-# create a SingleCellExperiment object sce
+#create a SingleCellExperiment object sce
 
 
 sce <- SingleCellExperiment(assay = list(counts = counts, logcounts=v))
 
 
-
-
-
-
-
-
-
-
+#focusing on entire frame
 
 
 all <-v
-
-
-
-
-
-# Focusing on entire frame
-
 
 
 c <- cor(all, method="pearson")
@@ -153,7 +137,7 @@ plot(pca18$x[,1:90])
 
 
 
-# 4. O:Z
+#4. O:Z
 
 gene_name=as.matrix(all)
 
@@ -161,7 +145,7 @@ plot(pca18$x[,1:2])
 
 
 
-###Voronoi plot ###
+###Voronoi plot###
 
 all <-v
 
@@ -227,7 +211,7 @@ all.col <-colnames(all)
 
 
 
-# Visualize Z and B routes
+#visualize Z and B routes
 
 pca18 <- prcomp(as.data.frame(t(all[,1:90])))
 
@@ -237,7 +221,7 @@ text(pca18$x[,1:90],labels=names(branch))
 
 
 
-###Voronoi plot ###
+###Voronoi plot###
 
 c <- cor(all, method="pearson")
 
