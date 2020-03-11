@@ -2,7 +2,7 @@
 
 
 
-#devtools::install_github("CABSEL/CALISTA/CALISTA-R/calista")
+devtools::install_github("CABSEL/CALISTA/CALISTA-R/calista")
 
 library(calista)
 
