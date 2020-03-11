@@ -1,13 +1,12 @@
-#flowSpy TI
+                                                        #flowSpy 
 
 
-#Install repository and load flowSpy
 #devtools::install_github("JhuangLab/flowSpy")
 
 library(flowSpy)
 
 
-#Load Data
+#load data
 
 TI_Data_Yan_et_al <- read_excel("TI_Yan.xlsx")
 
@@ -37,14 +36,14 @@ TID<-TID[,-c(1:2)]
 
 
 
-# save data in excel and R:
+#save data in excel and R:
 
 
-# save(TID,file="TID.Rda")
+   save(TID,file="TID.Rda")
 
 
 
-# write.xlsx2(TID, file="TID.xlsx")
+   write.xlsx2(TID, file="TID.xlsx")
 
 
 
@@ -56,22 +55,23 @@ counts<-as.matrix(TID)
 v<-log2(counts+1)
 
 
-# save: excel and R:
+#save: excel and R:
 
 
-# save(v,file="v.Rda")
+   save(v,file="v.Rda")
 
 
-# write.xlsx2(v, file="v.xlsx")
+   write.xlsx2(v, file="v.xlsx")
 
 
 
-# create a SingleCellExperiment object sce
+#create a SingleCellExperiment object sce
 
 
 sce <- SingleCellExperiment(assay = list(counts = counts, logcounts=v))
 
-#Preprocessing
+
+#preprocessing
 
 meta.data <- data.frame(cell = rownames(vv), stage =rownames(vv))
 
@@ -92,7 +92,7 @@ fspy <- processingCluster(fspy)
 
 fspy <- runFastPCA(fspy)
 
-# run t-Distributed Stochastic Neighbor Embedding (tSNE)
+#run t-Distributed Stochastic Neighbor Embedding (tSNE)
 
 fspy <- runTSNE(fspy, perplexity = 20)
 
@@ -101,7 +101,7 @@ fspy <- runUMAP(fspy)
 fspy <- buildTree(fspy, dim.type = "tsne", dim.use = 1:2)
 
 
-#Define Traj. root and stem
+#define trejectory root and stem
 
 
 diff.list <- runDiff(fspy)
@@ -111,7 +111,7 @@ fspy <- defRootCells(fspy, root.cells = c("Oocyte #1(RPKM)"))
 fspy <- defLeafCells(fspy, leaf.cells = c("Late blastocyst #3 -Cell#8(RPKM)"),verbose = TRUE)
 
 
-# run pseudotime
+#run pseudotime
 
 fspy <- runPseudotime(fspy, verbose = TRUE, dim.type = "raw")
 
@@ -120,13 +120,13 @@ plotPseudotimeTraj(fspy, var.cols = FALSE, markers=markers)
 plotPseudotimeTraj(fspy, cutoff = .05, var.cols = TRUE, markers=markers)
 
 
-# Plot 2D tSNE. And cells are colored by cluster id
+#Plot 2D tSNE; cells colored by cluster id
 
 plot2D(fspy, item.use = c("tSNE_1", "tSNE_2"), color.by = "cluster.id", 
        
        alpha = 1, main = "tSNE", category = "categorical", show.cluser.id = TRUE)
 
-# Plot 2D UMAP. And cells are colored by cluster id
+#plot 2D UMAP; cells colored by cluster id
 
 plot2D(fspy, item.use = c("UMAP_1", "UMAP_2"), color.by = "cluster.id", 
        
@@ -135,7 +135,7 @@ plot2D(fspy, item.use = c("UMAP_1", "UMAP_2"), color.by = "cluster.id",
 
 
 
-# UMAP plot colored by pseudotime
+#UMAP plot colored by pseudotime
 
 plot2D(fspy, item.use = c("UMAP_1", "UMAP_2"), category = "numeric",
        
@@ -145,7 +145,7 @@ plot2D(fspy, item.use = c("UMAP_1", "UMAP_2"), category = "numeric",
 
 
 
-# tSNE plot colored by pseudotime
+#tSNE plot colored by pseudotime
 
 plot2D(fspy, item.use = c("tSNE_1", "tSNE_2"), category = "numeric",
        
@@ -155,7 +155,7 @@ plot2D(fspy, item.use = c("tSNE_1", "tSNE_2"), category = "numeric",
 
 
 
-# trajectory value
+#trajectory value
 
 plotPseudotimeTraj(fspy, var.cols = TRUE) + 
   
