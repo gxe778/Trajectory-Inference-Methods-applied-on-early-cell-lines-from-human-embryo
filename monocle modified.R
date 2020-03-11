@@ -1,18 +1,14 @@
-#Monocle DDRTree Script
+                                              #Monocle3
 
 
 
-#Load Monocle:
-
-#devtools::install_github('cole-trapnell-lab/monocle3')
-
-
+devtools::install_github('cole-trapnell-lab/monocle3')
 
 library(monocle3)
 
 
 
-#Load Data
+#load data
 
 TI_Data_Yan_et_al <- read_excel("TI_Yan.xlsx")
 
@@ -41,15 +37,12 @@ TID<-TID[,-c(1:2)]
 
 
 
-
-              # save data in excel and R:
-
-
-# save(TID,file="TID.Rda")
+ #save data in excel and R:
 
 
+    save(TID,file="TID.Rda")
 
-# write.xlsx2(TID, file="TID.xlsx")
+    write.xlsx2(TID, file="TID.xlsx")
 
 
 
@@ -61,17 +54,17 @@ counts<-as.matrix(TID)
 v<-log2(counts+1)
 
 
-# save: excel and R:
+#save: excel and R:
 
 
-# save(v,file="v.Rda")
+   save(v,file="v.Rda")
 
 
-# write.xlsx2(v, file="v.xlsx")
+   write.xlsx2(v, file="v.xlsx")
 
 
 
-# create a SingleCellExperiment object sce
+#create a SingleCellExperiment object sce
 
 
 sce <- SingleCellExperiment(assay = list(counts = counts, logcounts=v))
@@ -79,7 +72,7 @@ sce <- SingleCellExperiment(assay = list(counts = counts, logcounts=v))
 
 
 
-#pre-process, partition, reduce, and cluster Monocle 3
+#pre-processing, partitioning, reduction and clustering
 
 cds <- new_cell_data_set(v)
 
@@ -89,7 +82,7 @@ cds <- preprocess_cds(cds, num_dim = 100)
 
 
 
-#Reduce via UMAP
+#reduction: UMAP
 
 cds <- reduce_dimension(cds)
 
@@ -98,30 +91,18 @@ cds <- reduce_dimension(cds)
 cds <- cluster_cells(cds)
 
 
+#trajectory/pseudotime
 
 cds <- learn_graph(cds)
-
-
-
 
 
 plot_cells(cds)
 
 
-
-
-
 partition<-colnames(v)
 
 
-
-
-
 plot_cells(cds, group_cells_by="partition")
-
-
-
-
 
 
 
@@ -136,9 +117,7 @@ plot_cells(cds,
            label_branch_points=FALSE)
 
 
-
 cds = order_cells(cds)
-
 
 
 plot_cells(cds,
