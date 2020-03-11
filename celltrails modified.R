@@ -1,7 +1,7 @@
                                               #CellTrails 
 
 
-#BiocManager::install("CellTrails")
+BiocManager::install("CellTrails")
 
 library(CellTrails)
 
