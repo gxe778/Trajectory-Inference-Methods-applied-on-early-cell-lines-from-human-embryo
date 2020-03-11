@@ -1,12 +1,11 @@
-#Tempora
+                                                  #Tempora
 
 devtools::install_github("BaderLab/Tempora")
-
 
 library(Tempora)
 
 
-#Load Data
+#load data
 
 TI_Data_Yan_et_al <- read_excel("TI_Yan.xlsx")
 
@@ -36,14 +35,14 @@ TID<-TID[,-c(1:2)]
 
 
 
-# save data in excel and R:
+#save data in excel and R:
 
 
-          # save(TID,file="TID.Rda")
+          save(TID,file="TID.Rda")
 
 
 
-          # write.xlsx2(TID, file="TID.xlsx")
+          write.xlsx2(TID, file="TID.xlsx")
 
 
 
@@ -55,17 +54,17 @@ counts<-as.matrix(TID)
 v<-log2(counts+1)
 
 
-# save: excel and R:
+#save: excel and R:
 
 
-        # save(v,file="v.Rda")
+        save(v,file="v.Rda")
 
 
-        # write.xlsx2(v, file="v.xlsx")
+        write.xlsx2(v, file="v.xlsx")
 
 
 
-# Create Seurat object 
+#create Seurat object 
 
 
 sce <- SingleCellExperiment(assay = list(counts = counts, logcounts=v))
@@ -160,7 +159,7 @@ pbmc <- FindClusters(pbmc, resolution = 0.5)
 
 
 
-# Look at cluster IDs of the first 5 cells
+#cluster IDs of the first 5 cells
 head(Idents(pbmc), 5)
 
 
@@ -187,7 +186,7 @@ Clusters <- pbmc@meta.data$RNA_snn_res.0.5
 celltype_markers<-NULL
 
 
-
+#Tempora object 
 
 T <- ImportSeuratObject(pbmc, "RNA", clusters = Clusters,
                                      timepoints = Timepoints, 
@@ -196,7 +195,7 @@ T <- ImportSeuratObject(pbmc, "RNA", clusters = Clusters,
 
 
 
-#Download Human Enrichment Set: Human_GO_AllPathways_no_GO_iea_March_01_2020_symbol.gmt:   
+#download Human Enrichment Set: Human_GO_AllPathways_no_GO_iea_March_01_2020_symbol.gmt:   
 
                      #http://download.baderlab.org/EM_Genesets/current_release/Human/symbol/
   
@@ -204,22 +203,21 @@ T <- ImportSeuratObject(pbmc, "RNA", clusters = Clusters,
 
 
 
-#Estimate pathway enrichment profiles of clusters
-#gmt path is Enrichment set within working directory
+#estimate pathway enrichment profiles of clusters; Human Enrichment Set within working directory
 
 cortex_tempora <- CalculatePWProfiles(T, 
                                       gmt_path =".....",
                                       method="gsva", min.sz = 5, max.sz = 200, parallel.sz = 1)
 
-#Build trajectory 
+#build trajectory 
 
 cortex_tempora <- BuildTrajectory(T, n_pcs = ...., difference_threshold = 0.01)
 
 
-#Visualize the trajectory
+#visualize trajectory
 
 cortex_tempora <- PlotTrajectory(T)
 
-#Fit GAMs on pathway enrichment profile
+#fit GAMs on pathway enrichment profile
 
 cortex_tempora <- IdentifyVaryingPWs(T, pval_threshold = 0.05)
