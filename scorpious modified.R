@@ -1,6 +1,4 @@
-#SCORPIOUS script
-
-#https://github.com/rcannood/SCORPIUS
+                                                  #SCORPIOUS 
 
 
 devtools::install_github("rcannood/SCORPIUS", build_vignettes = TRUE)
@@ -9,7 +7,7 @@ library(SCORPIUS)
 
 
 
-#Load Data
+#load data
 
 TI_Data_Yan_et_al <- read_excel("TI_Yan.xlsx")
 
@@ -39,14 +37,14 @@ TID<-TID[,-c(1:2)]
 
 
 
-# save data in excel and R:
+#save data in excel and R:
 
 
-# save(TID,file="TID.Rda")
+   save(TID,file="TID.Rda")
 
 
 
-# write.xlsx2(TID, file="TID.xlsx")
+   write.xlsx2(TID, file="TID.xlsx")
 
 
 
@@ -58,17 +56,17 @@ counts<-as.matrix(TID)
 v<-log2(counts+1)
 
 
-# save: excel and R:
+#save: excel and R:
 
 
-# save(v,file="v.Rda")
+   save(v,file="v.Rda")
 
 
-# write.xlsx2(v, file="v.xlsx")
+   write.xlsx2(v, file="v.xlsx")
 
 
 
-# create a SingleCellExperiment object sce
+#create a SingleCellExperiment object sce
 
 
 sce <- SingleCellExperiment(assay = list(counts = counts, logcounts=v))
@@ -79,12 +77,12 @@ sce <- SingleCellExperiment(assay = list(counts = counts, logcounts=v))
 
 groups<- c(colnames(v))
 
-#Dim. reduction
+#dimension reduction
 
 space <- reduce_dimensionality(v, "spearman")
 draw_trajectory_plot(space,contour = TRUE)
 
-#Inference
+#inference
 
 traj <- infer_trajectory(space)
 
