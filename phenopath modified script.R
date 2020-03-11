@@ -1,7 +1,7 @@
                                               #phenopath 
 
 
-#devtools::install_github("kieranrcampbell/phenopath", build_vignettes = TRUE)
+devtools::install_github("kieranrcampbell/phenopath", build_vignettes = TRUE)
 
 library(phenopath)
 
